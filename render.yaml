@@ -1,0 +1,10 @@
+services:
+- type: web
+  name: mi-viaje
+  env: static
+  buildCommand: npm run build
+  staticPublishPath: ./build
+  routes:
+    - type: rewrite
+      source: /viajes/*
+      destination: /index.html
