@@ -69,7 +69,7 @@ export const login = async (req, res) => {
 
             // Guarda el token en la cookie
             const token = await createAccessToken({ id: userFound.id });
-            res.cookie('token', token, { secure: true, sameSite: 'None' });
+            res.cookie('token', token, { secure: true, sameSite: 'None', });
 
             // Envía la respuesta
             return res.json({
@@ -102,6 +102,7 @@ export const login = async (req, res) => {
         }
 
         // Busca el usuario en la colección Empleados
+        /*
         const userEmpleado = await Empleados.findOne({ email });
         if (userEmpleado) {
             // Compara la contraseña
@@ -122,6 +123,7 @@ export const login = async (req, res) => {
                 updateAt: userEmpleado.updatedAt,
             });
         }
+        */
 
         // Si no se encontró ningún usuario
         return res.status(400).json({ message: "El correo no existe" });

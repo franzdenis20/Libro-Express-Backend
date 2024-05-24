@@ -19,7 +19,7 @@ app.use(cookieParser());
 
 // Configuración de CORS para permitir solicitudes de un origen específico
 app.use(cors({
-  origin: "https://libro-express.onrender.com", // El origen permitido  
+  origin: true, // El origen permitido  
   //origin: "http://localhost:5173", 
 
   //origin: `${process.env.MY_ORIGIN_API}`,
