@@ -45,8 +45,9 @@ export const registerPrestamo = async (req, res) => {
 // obtener todos los libros de un usuario logueado
 export const getLibrosPrestados = async (req, res) => {
     try {
+        
         const libros = await Prestamo.find({
-            idUser: req.user.id
+            idUser: req.params.id
         }).populate('idLibro');  
         res.json(libros);
     } catch (error) {

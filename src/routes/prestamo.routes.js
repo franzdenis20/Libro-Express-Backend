@@ -8,7 +8,7 @@ const router = Router();
 
 router.post("/registerPrestamo", registerPrestamo);
 
-router.get("/librosPrestados",authRequired,getLibrosPrestados);
+router.get("/librosPrestados/:id",getLibrosPrestados);
 
 
 export default router;
